@@ -1,6 +1,8 @@
-import { ICountry, IDataObj } from "../types";
+import { ICountry, IInitialCountry } from "../types";
 
-export const transformCountries = (countries: IDataObj[]): ICountry[] => {
+export const transformCountries = (
+  countries: IInitialCountry[]
+): ICountry[] => {
   return countries.map((country) => {
     return {
       flag: country.flags.svg,

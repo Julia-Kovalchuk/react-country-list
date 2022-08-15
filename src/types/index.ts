@@ -7,13 +7,33 @@ export interface ICountry {
   region: string;
 }
 
-export interface IDataObj {
-  flags: { svg: string };
-  name: { common: string };
+interface IFlag {
+  png: string;
+  svg: string;
+}
+
+interface ILanguage {
+  official: string;
+  common: string;
+}
+
+interface INativeName {
+  [key: string]: ILanguage | undefined;
+}
+
+interface IName {
+  common: string;
+  official: string;
+  nativeName: INativeName;
+}
+
+export interface IInitialCountry {
+  flags: IFlag;
+  name: IName;
   capital: string[];
-  population: number;
-  area: number;
   region: string;
+  area: number;
+  population: number;
 }
 
 export type BadgeLabel = "area" | "population";
